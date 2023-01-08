@@ -3,8 +3,29 @@
     <div class="wrapper-content">
       <section>
         <div class="container">
-          <h1>Hello</h1>
-          <img alt="Vue logo" src="./assets/logo.png" />
+          <h1>{{ title }}</h1>
+
+          <div class="message" v-if="message">
+            <p>{{ message }}</p>
+          </div>
+
+          <div class="new-note">
+            <input v-model="note.title" type="text" />
+            <textarea v-model="note.descr"></textarea>
+            <button @click="addNote">New note</button>
+          </div>
+
+          <div class="notes">
+            <div class="note" v-for="(note, index) in notes" :key="index">
+              <div class="note-header">
+                <p>{{ note.title }}</p>
+              </div>
+              <div class="note-body">
+                <p>{{ note.descr }}</p>
+                <span> {{ note.date }} </span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -12,7 +33,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {}
+  },
+}
 </script>
 
 <style></style>
