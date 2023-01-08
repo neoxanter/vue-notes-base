@@ -35,7 +35,33 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      title: 'Notes App',
+      search: '',
+      message: null,
+      grid: true,
+      note: {
+        title: '',
+        descr: '',
+      },
+      notes: [
+        {
+          title: 'First Note',
+          descr: 'Description for first note',
+          date: new Date(Date.now()).toLocaleString(),
+        },
+        {
+          title: 'Second Note',
+          descr: 'Description for second note',
+          date: new Date(Date.now()).toLocaleString(),
+        },
+        {
+          title: 'Third Note',
+          descr: 'Description for third note',
+          date: new Date(Date.now()).toLocaleString(),
+        },
+      ],
+    }
   },
 }
 </script>
