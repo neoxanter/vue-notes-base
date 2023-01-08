@@ -63,6 +63,24 @@ export default {
       ],
     }
   },
+
+  methods: {
+    addNote() {
+      let { title, descr } = this.note
+      if (title == '') {
+        this.message = 'Title cant`t be blank!'
+        return false
+      }
+      this.notes.push({
+        title,
+        descr,
+        date: new Date(Date.now()).toLocaleString(),
+      })
+      this.message = null
+      this.note.title = ''
+      this.note.descr = ''
+    },
+  },
 }
 </script>
 
