@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import message from '@/components/Message.vue'
 export default {
   data() {
     return {
