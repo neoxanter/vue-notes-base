@@ -5,6 +5,7 @@
         <div class="container">
           <h1>{{ title }}</h1>
 
+          <message v-if="message" message="hellow message" />
           <div class="message" v-if="message">
             <p>{{ message }}</p>
           </div>
@@ -34,7 +35,11 @@
 
 <script>
 import message from '@/components/Message.vue'
+import Message from './components/Message.vue'
 export default {
+  components: {
+    message
+  },
   data() {
     return {
       title: 'Notes App',
