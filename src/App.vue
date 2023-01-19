@@ -5,7 +5,8 @@
         <div class="container">
           <h1>{{ title }}</h1>
 
-          <message v-if="message" message="hellow message" />
+          <message v-if="message" :message="message" />
+
           <div class="message" v-if="message">
             <p>{{ message }}</p>
           </div>
@@ -34,60 +35,60 @@
 </template>
 
 <script>
-import message from '@/components/Message.vue'
-import Message from './components/Message.vue'
+import message from "@/components/Message.vue";
+import Message from "./components/Message.vue";
 export default {
   components: {
-    message
+    message,
   },
   data() {
     return {
-      title: 'Notes App',
-      search: '',
+      title: "Notes App",
+      search: "",
       message: null,
       grid: true,
       note: {
-        title: '',
-        descr: '',
+        title: "",
+        descr: "",
       },
       notes: [
         {
-          title: 'First Note',
-          descr: 'Description for first note',
+          title: "First Note",
+          descr: "Description for first note",
           date: new Date(Date.now()).toLocaleString(),
         },
         {
-          title: 'Second Note',
-          descr: 'Description for second note',
+          title: "Second Note",
+          descr: "Description for second note",
           date: new Date(Date.now()).toLocaleString(),
         },
         {
-          title: 'Third Note',
-          descr: 'Description for third note',
+          title: "Third Note",
+          descr: "Description for third note",
           date: new Date(Date.now()).toLocaleString(),
         },
       ],
-    }
+    };
   },
 
   methods: {
     addNote() {
-      let { title, descr } = this.note
-      if (title == '') {
-        this.message = 'Title cant`t be blank!'
-        return false
+      let { title, descr } = this.note;
+      if (title == "") {
+        this.message = "Title cant`t be blank!";
+        return false;
       }
       this.notes.push({
         title,
         descr,
         date: new Date(Date.now()).toLocaleString(),
-      })
-      this.message = null
-      this.note.title = ''
-      this.note.descr = ''
+      });
+      this.message = null;
+      this.note.title = "";
+      this.note.descr = "";
     },
   },
-}
+};
 </script>
 
 <style></style>
