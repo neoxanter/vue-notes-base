@@ -22,7 +22,7 @@ export default {
     },
   },
   methods: {
-    removeNote() {},
+    removeNote(index) {},
   },
 };
 </script>
@@ -37,17 +37,21 @@ export default {
 }
 
 .note {
-  width: 46%;
+  width: 48%;
   padding: 18px 20px;
   margin-bottom: 20px;
   background-color: #fff;
 }
 
-.note-header p {
-  font-style: 22px;
-  color: rgb(59, 24, 212);
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    font-style: 22px;
+    color: rgb(59, 24, 212);
+  }
 }
-
 .note-body {
   margin: 20px 0;
 }
