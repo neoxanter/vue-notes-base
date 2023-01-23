@@ -22,7 +22,9 @@ export default {
     },
   },
   methods: {
-    removeNote(index) {},
+    removeNote(index) {
+      this.$emit("remove", index);
+    },
   },
 };
 </script>
@@ -53,11 +55,13 @@ export default {
   }
 }
 .note-body {
-  margin: 20px 0;
-}
+  p {
+    margin: 20px 0;
+  }
 
-span {
-  font-size: 14px;
-  color: #999;
+  span {
+    font-size: 14px;
+    color: #999;
+  }
 }
 </style>
