@@ -60,6 +60,9 @@ export default {
   svg {
     margin-right: 12px;
     color: #999;
+    &.active {
+      color: rgb(59, 24, 212);
+    }
     &:last-child {
       margin-right: 0;
     }

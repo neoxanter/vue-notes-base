@@ -10,6 +10,9 @@
             <h1>{{ title }}</h1>
             <div class="icons">
               <svg
+                :class="{ active: grid }"
+                @click="grid = true"
+                style="cursor: pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -26,6 +29,9 @@
                 <rect x="3" y="14" width="7" height="7"></rect>
               </svg>
               <svg
+                :class="{ active: !grid }"
+                @click="grid = false"
+                style="cursor: pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
