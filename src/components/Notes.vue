@@ -6,7 +6,7 @@
       v-for="(note, index) in notes"
       :key="index"
     >
-      <div class="note-header">
+      <div class="note-header" :class="{ full: !grid }">
         <p>{{ note.title }}</p>
         <p style="cursor: pointer" @click="removeNote(index)">x</p>
       </div>
@@ -52,8 +52,16 @@ export default {
   padding: 18px 20px;
   margin-bottom: 20px;
   background-color: #fff;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  &:hover {
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.4);
+    transform: translate(0, -6px);
+    transition-delay: 0s !important;
+  }
   &.full {
     width: 100px;
+    text-align: center;
   }
 }
 
@@ -77,6 +85,15 @@ export default {
     }
     &:last-child {
       margin-right: 0;
+    }
+  }
+  &.full {
+    justify-content: center;
+    p {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
