@@ -52,7 +52,7 @@
             </div>
           </div>
 
-          <notes :notes="notes" @remove="removeNote" />
+          <notes :notes="notes" :grid="grid" @remove="removeNote" />
 
           <div class="message" v-if="message">
             <p>{{ message }}</p>

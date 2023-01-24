@@ -20,6 +20,10 @@ export default {
       type: Array,
       required: true,
     },
+    grid: {
+      type: Boolean,
+      required: true,
+    },
   },
   methods: {
     removeNote(index) {
