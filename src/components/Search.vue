@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <input type="text" v-model="search" />
+    <input type="text" :placeholder="placeholder" v-model="search" />
   </div>
 </template>
 
