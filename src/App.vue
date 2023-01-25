@@ -58,7 +58,7 @@
             @search="search = $event"
           />
 
-          <notes :notes="notes" :grid="grid" @remove="removeNote" />
+          <notes :notes="notesFilter" :grid="grid" @remove="removeNote" />
 
           <div class="message" v-if="message">
             <p>{{ message }}</p>
@@ -110,7 +110,20 @@ export default {
       ],
     };
   },
-
+  computed: {
+    notesFilter() {
+      let array = this.notes,
+        search = this.search;
+      if (!search) return array;
+      search = search.trim().toLowerCase();
+      array = array.filter(function (item) {
+        if (item.title.toLowerCase().indexOf(search) !== -1) {
+          return item;
+        }
+      });
+      return array;
+    },
+  },
   methods: {
     addNote() {
       let { title, descr } = this.note;
