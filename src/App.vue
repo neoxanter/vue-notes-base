@@ -52,6 +52,12 @@
             </div>
           </div>
 
+          <search
+            :value="search"
+            placeholder="Find your note"
+            @search="search = $event"
+          />
+
           <notes :notes="notes" :grid="grid" @remove="removeNote" />
 
           <div class="message" v-if="message">
@@ -67,11 +73,13 @@
 import message from "@/components/Message.vue";
 import newNote from "@/components/NewNote.vue";
 import notes from "@/components/Notes.vue";
+import search from "@/components/Search.vue";
 export default {
   components: {
     message,
     newNote,
     notes,
+    search,
   },
   data() {
     return {
