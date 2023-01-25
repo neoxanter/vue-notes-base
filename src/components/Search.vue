@@ -19,12 +19,32 @@
         </svg>
       </div>
     </div>
+
     <input type="text" v-model="search" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      default: "Search",
+    },
+  },
+  data() {
+    return { search: this.value };
+  },
+  watch: {
+    search(val) {
+      this.$emit("search", val);
+    },
+  },
+};
 </script>
 
 <style scoped>
