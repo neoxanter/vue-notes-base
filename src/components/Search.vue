@@ -48,4 +48,18 @@ export default {
 </script>
 
 <style scoped>
+svg {
+  color: #e4e4e4;
+}
+
+.wrapper-search {
+  position: relative;
+}
+
+.search {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+}
 </style>
