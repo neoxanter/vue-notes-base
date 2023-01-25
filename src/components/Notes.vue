@@ -60,7 +60,7 @@ export default {
     transition-delay: 0s !important;
   }
   &.full {
-    width: 100px;
+    width: 100%;
     text-align: center;
   }
 }
