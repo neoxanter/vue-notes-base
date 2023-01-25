@@ -3,11 +3,25 @@
     <div class="wrapper-content">
       <section>
         <div class="container">
+          <div
+            class="note-header"
+            style="margin: 36px 0; justify-content: center"
+          >
+            <h1>{{ title }}</h1>
+          </div>
+
           <message v-if="message" :message="message" />
           <newNote :note="note" @addNote="addNote" />
 
-          <div class="note-header">
+          <div class="note-header" style="margin: 36px 0">
             <h1>{{ title }}</h1>
+
+            <search
+              :value="search"
+              placeholder="Find your note"
+              @search="search = $event"
+            />
+
             <div class="icons">
               <svg
                 :class="{ active: grid }"
@@ -52,17 +66,7 @@
             </div>
           </div>
 
-          <search
-            :value="search"
-            placeholder="Find your note"
-            @search="search = $event"
-          />
-
           <notes :notes="notesFilter" :grid="grid" @remove="removeNote" />
-
-          <div class="message" v-if="message">
-            <p>{{ message }}</p>
-          </div>
         </div>
       </section>
     </div>
@@ -127,7 +131,7 @@ export default {
   methods: {
     addNote() {
       let { title, descr } = this.note;
-      if (title == "") {
+      if (title === "") {
         this.message = "Title cant`t be blank!";
         return false;
       }
@@ -147,4 +151,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.container {
+  max-width: 800px;
+}
+</style>

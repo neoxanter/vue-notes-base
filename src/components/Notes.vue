@@ -43,7 +43,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: wrap;
+  flex-wrap: wrap;
   padding: 40px 0;
 }
 
@@ -55,7 +55,7 @@ export default {
   box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   &:hover {
-    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.04);
     transform: translate(0, -6px);
     transition-delay: 0s !important;
   }
@@ -73,7 +73,7 @@ export default {
     font-size: 32px;
   }
   p {
-    font-style: 22px;
+    font-size: 22px;
     color: rgb(59, 24, 212);
   }
 
@@ -101,7 +101,6 @@ export default {
   p {
     margin: 20px 0;
   }
-
   span {
     font-size: 14px;
     color: #999;
